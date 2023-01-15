@@ -1,0 +1,34 @@
+.first-nav {
+   grid-column: 7/10;
+   grid-row: 1/2;
+   @include navigation;
+
+   //Breakpoint 1300px
+   @include response(xlBreakPoint) {
+      grid-column: 6/10;
+   }
+   //Breakpoint 1000px
+   @include response(lgBreakPoint) {
+      grid-column: 5/10;
+   }
+
+   //Mobile 600px
+   @include response(mobileBreakPoint) {
+      grid-column: 2/-1;
+   }
+}
+
+.second-nav {
+   @include navigation;
+   grid-column: 3/8;
+   grid-row: 3/4;
+
+   @include response(lgBreakPoint) {
+      grid-column: 2/9;
+   }
+
+   //Mobile 600px
+   @include response(mobileBreakPoint) {
+      grid-column: 1/-1;
+   }
+}

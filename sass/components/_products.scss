@@ -1,0 +1,101 @@
+.products {
+   grid-column: 1/-1;
+   grid-row: 3/4;
+
+   &-heading {
+      margin: 5rem 0;
+      &-text {
+         text-align: center;
+         font-size: $xl-font;
+         font-weight: 300;
+         color: $primary-color;
+      }
+   }
+
+   &-wrapper {
+      @include flexLayout;
+   }
+}
+
+.product {
+   position: relative;
+   cursor: pointer;
+
+   &:hover .product-description {
+      opacity: 1;
+
+      visibility: visible;
+   }
+
+   &:hover .product-img {
+      opacity: 0.5;
+   }
+
+   &-img {
+      width: 100%;
+      transition: all 1s;
+   }
+
+   &-description {
+      position: absolute;
+      @include centerAbsolute;
+      background-color: transparentize($secondary-color, 0.3);
+      border: 0.1rem solid $primary-color;
+      padding: 2rem;
+      border-radius: 5px;
+      color: $primary-color;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 1s;
+
+      //Breakpoint 1000px
+      @include response(lgBreakPoint) {
+         padding: 1rem;
+      }
+
+      &-heading {
+         font-size: $xl-font;
+         margin: 0;
+
+         //Breakpoint 1000px
+         @include response(lgBreakPoint) {
+            font-size: $md-font;
+         }
+      }
+
+      &-price {
+         font-size: $lg-font;
+         font-weight: 300;
+         margin: 1rem 0;
+
+         //Breakpoint 1000px
+         @include response(lgBreakPoint) {
+            font-size: $sm-font;
+         }
+
+         span {
+            font-weight: bold;
+         }
+      }
+      &-btn {
+         font-size: $sm-font;
+         text-decoration: none;
+         color: $quaternary-color;
+         display: block;
+         padding: 0.5rem 1rem;
+         border: 0.1rem solid $quaternary-color;
+         background-color: lighten($primary-color, 20%);
+
+         //Breakpoint 1000px
+         @include response(lgBreakPoint) {
+            padding: 0.2rem 0.5rem;
+            font-size: $xs-font;
+         }
+      }
+   }
+}
+
+.products-btn {
+   @include flexLayout;
+}
